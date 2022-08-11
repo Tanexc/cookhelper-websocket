@@ -10,10 +10,15 @@ class ChatConnectionManager:
         self.chatManager = ChatManager()
 
     async def connect(self, websocket: WebSocket, token, id):
+        resp = self.chatManager.getChat(token, id)
         await websocket.accept()
-        self.connections[websocket] = [token, id]
+        if resp[0] is True:
+            self.connections[websocket] = [token, id]
+        else:
+            await websocket.close()
 
     def disconnect(self, websocket: WebSocket):
+        await websocket.close()
         del self.connections[websocket]
 
     def getInfo(self, websocket):
@@ -29,13 +34,11 @@ class ChatConnectionManager:
     async def send_in_chat(self, message: str, websocket: WebSocket):
         chat_id = self.connections[websocket][1]
         token = self.connections[websocket][0]
-        print(token, chat_id)
-        print(self.connections)
-        self.chatManager.postMessage(token=token, id=chat_id, text=message)
-        messages = self.chatManager.getAllMessages(token=token, id=chat_id)
+        message = self.chatManager.postMessage(token=token, id=chat_id, text=message)
         for con in self.connections:
-            print(self.connections[con])
             if self.connections[con][1] == chat_id:
-                if messages is None:
-                    messages = []
-                await con.send_json(data=messages)
+                if message is None:
+                    message = {
+                        "text": "websocket: some problem occurred"
+                    }
+                await con.send_json(data=message)

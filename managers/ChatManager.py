@@ -19,19 +19,15 @@ class ChatManager:
     def postMessage(self, token: str, id: int, text: str):
         response = requests.post(API_URL + self.CHAT_POST_MES + f"?token={token}&id={id}&text={text}").json()
         if response["status"] == 400:
-            return True
+            return response["chat-message"]
         else:
             return False
 
     def getAllMessages(self, token: str, id: int):
-        ret = []
         resp = self.getChat(token, id)
         if resp[0] is True:
             messages = resp[1]["messages"]
         else:
             return None
-        # for mid in messages.split():
-        # response = requests.get(API_URL + self.CHAT_GET_MES + f"?token={token}&id={mid}&chat-id={id}").json()
-        # ret.append(response["chat-message"])
         ret = list(map(lambda x: int(x), messages.split()))
         return ret

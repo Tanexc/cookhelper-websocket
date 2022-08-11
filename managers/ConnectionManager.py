@@ -42,4 +42,8 @@ class ChatConnectionManager:
                     message = {
                         "text": "websocket: some problem occurred"
                     }
-                await con.send_json(data=message)
+                try:
+                    await con.send_json(data=message)
+                except Exception as e:
+                    print(e)
+                    del self.connections[con]

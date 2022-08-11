@@ -45,4 +45,4 @@ class ChatConnectionManager:
                 try:
                     await con.send_json(data=message)
                 except Exception as e:
-                    print("dcsdcsdc " + e)
+                    print("dcsdcsdc " + str(e))

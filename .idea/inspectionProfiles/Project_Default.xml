@@ -1,0 +1,49 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPep8NamingInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="N802" />
+          <option value="N814" />
+          <option value="N801" />
+          <option value="N806" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="str.resize" />
+          <option value="typing.Iterator.__getitem__" />
+          <option value="cookhelper.api.views_model.views_user.ModelException" />
+          <option value="cookhelper.api.views_model.views_user.SuccessException" />
+          <option value="cookhelper.api.views_model.views_user.FieldRequiredException" />
+          <option value="cookhelper.api.views_model.views_user.clear" />
+          <option value="cookhelper.api.views_model.views_user.PermissionException" />
+          <option value="cookhelper.api.models.RejectException" />
+          <option value="cookhelper.api.models.api" />
+          <option value="cookhelper.api.models.Type" />
+          <option value="cookhelper.api.models.ModelException" />
+          <option value="cookhelper.api.views_model.views_user.RejectException" />
+          <option value="cookhelper.api.models.MissFields" />
+          <option value="cookhelper.api.models.UnknownField" />
+          <option value="cookhelper.api.views_model.views_user.UserNotVerified" />
+          <option value="cookhelper.api.views_model.views_forum.FieldRequiredException" />
+          <option value="cookhelper.api.views_model.views_forum.clear" />
+          <option value="cookhelper.api.views_model.views_forum.SuccessException" />
+          <option value="cookhelper.api.views_model.views_forum.ModelException" />
+          <option value="cookhelper.api.views_model.views_forum.topicInfo" />
+          <option value="cookhelper.api.views_model.views_forum.UserNotVerified" />
+          <option value="cookhelper.api.views_model.views_forum.PermissionException" />
+          <option value="cookhelper.cookhelper.asgi.api" />
+          <option value="cookhelper.api.views_model.views_recipe.clear" />
+          <option value="cookhelper.api.views_model.views_recipe.FieldRequiredException" />
+          <option value="cookhelper.api.views_model.views_chat.clear" />
+          <option value="cookhelper.api.views_model.views_recipe.SuccessException" />
+          <option value="cookhelper.api.views_model.views_chat.FieldRequiredException" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>

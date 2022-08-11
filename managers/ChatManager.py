@@ -30,7 +30,8 @@ class ChatManager:
             messages = resp[1]["messages"]
         else:
             return None
-        for mid in messages.split():
-            response = requests.get(API_URL + self.CHAT_GET_MES + f"?token={token}&id={mid}&chat-id={id}").json()
-            ret.append(response["chat-message"])
+        # for mid in messages.split():
+        # response = requests.get(API_URL + self.CHAT_GET_MES + f"?token={token}&id={mid}&chat-id={id}").json()
+        # ret.append(response["chat-message"])
+        ret.append(list(map(lambda x: int(x), messages.split())))
         return ret

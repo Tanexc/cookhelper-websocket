@@ -69,6 +69,7 @@ async def chat_websocket_endpoint(
     try:
         while True:
             data = await websocket.receive_text()
+            a = 345345 / 0
             await manager.send_in_chat(message=data, websocket=websocket)
     except Exception as e:
         print(str(e))

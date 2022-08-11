@@ -72,7 +72,7 @@ async def chat_websocket_endpoint(
             a = 345345 / 0
             await manager.send_in_chat(message=data, websocket=websocket)
     except Exception as e:
-        print(str(e))
+        raise Exception
 
 
 if __name__ == "__main__":

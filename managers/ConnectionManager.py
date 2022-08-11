@@ -45,5 +45,4 @@ class ChatConnectionManager:
                 try:
                     await con.send_json(data=message)
                 except Exception as e:
-                    print(e)
-                    del self.connections[con]
+                    print("dcsdcsdc " + e)

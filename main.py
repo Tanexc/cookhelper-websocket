@@ -32,7 +32,7 @@ html = """
             function connect(event) {
                 var itemId = document.getElementById("itemId")
                 var token = document.getElementById("token")
-                ws = new WebSocket("ws://localhost:8000/ws/chat/1/?token=" + token.value);
+                ws = new WebSocket("ws://cookhelper-ws.herokuapp.com/ws/chat/1/?token=" + token.value);
                 ws.onmessage = function(event) {
                     var messages = document.getElementById('messages')
                     var message = document.createElement('li')
@@ -72,4 +72,4 @@ async def chat_websocket_endpoint(
 
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="127.0.0.1", port=8000)
+    uvicorn.run(app, host="0.0.0.0")

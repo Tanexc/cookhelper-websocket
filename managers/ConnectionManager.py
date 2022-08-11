@@ -17,7 +17,7 @@ class ChatConnectionManager:
         else:
             await websocket.close()
 
-    def disconnect(self, websocket: WebSocket):
+    async def disconnect(self, websocket: WebSocket):
         await websocket.close()
         del self.connections[websocket]
 

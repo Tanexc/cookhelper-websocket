@@ -11,6 +11,7 @@ class ChatConnectionManager:
 
     async def connect(self, websocket: WebSocket, token, id):
         resp = self.chatManager.getChat(token, id)
+        print(resp)
         await websocket.accept()
         if resp[0] is True:
             self.connections[websocket] = [token, id]
